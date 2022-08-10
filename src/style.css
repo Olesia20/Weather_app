@@ -58,3 +58,11 @@ li {
   color: white;
   box-shadow: 2px 2px 2px 2px rgb(157, 157, 157);
 }
+.weather-temperature .active {
+  color: #32515c;
+  text-decoration: none;
+  cursor: default;
+}
+.weather-temperature .tempFar {
+  text-decoration: none;
+}

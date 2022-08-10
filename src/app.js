@@ -36,6 +36,7 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = Math.round(response.data.wind.speed);
   let dataElemet = document.querySelector("#date");
+  celsiumTemperature = response.data.main.temp;
   dataElemet.innerHTML = formatDate(response.data.dt * 1000);
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
@@ -56,6 +57,27 @@ function handleSubmit(event) {
   search(cityInputElement.value);
   console.log(cityInputElement.value);
 }
-search("kyiv");
+function displayFuhrenheitTemperature(event) {
+  event.preventDefault();
+  let tempCelsius = document.querySelector("#temperature");
+  tempC.classList.remove("active");
+
+  let tempF = (celsiumTemperature * 9) / 5 + 32;
+  tempCelsius.innerHTML = Math.round(tempF);
+}
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let tempCelsius = document.querySelector("#temperature");
+  tempCelsius.innerHTML = Math.round(celsiumTemperature);
+}
+
+let celsiumTemperature = null;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let tempF = document.querySelector("#fuhrenheit-link");
+tempF.addEventListener("click", displayFuhrenheitTemperature);
+
+let tempC = document.querySelector("#celsium-link");
+tempC.addEventListener("click", displayCelsiusTemperature);
+search("kyiv");
