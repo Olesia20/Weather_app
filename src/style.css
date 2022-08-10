@@ -2,11 +2,16 @@ body {
   font-family: "Rajdhani", sans-serif;
   color: #32515c;
 }
+h1 {
+  margin-bottom: 1px;
+  font-size: 40px;
+}
 
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  font-size: 20px;
 }
 .weather-wrapper {
   max-width: 600px;
@@ -22,4 +27,23 @@ ul {
 
   border-radius: 10px;
   box-shadow: 5px 5px 5px 2px;
+}
+.overview {
+  margin-bottom: 20px;
+}
+.weather-temperature img {
+  margin-right: 8px;
+  float: left;
+  height: 50px;
+  width: 50px;
+}
+.weather-temperature strong {
+  color: #49060e;
+  font-size: 50px;
+  line-height: 1;
+}
+.weather-temperature .units {
+  position: relative;
+  font-size: 20px;
+  top: -16px;
 }
