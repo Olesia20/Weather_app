@@ -18,18 +18,37 @@
     />
     <title>Weather_App</title>
     <link rel="stylesheet" href="src/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="conteiner">
       <div class="weather-wrapper">
         <div class="weather_app">
-          <div class="overview">
-            <h1 id="city"></h1>
-            <ul>
-              <li id="date">Friday 8:50</li>
-              <li id="description"></li>
-            </ul>
+          <div class="row">
+            <div class="col-4">
+            <div class="overview">
+              <h1 id="city"></h1>
+              <ul>
+                <li id="date">Friday 8:50</li>
+                <li id="description"></li>
+              </ul>
+            </div>
+            </div>
+            <div class="col-6">
+            <form id="search-form">
+              <input
+                type="search"
+                placeholder="Type a city..."
+                class="form-control"
+                id="city-input"
+                autocomplete="on"
+              />
+              </div>
+              <div class="col-2">
+              <input type="submit" value="Search" id="button" class="button" />
+              </div>
+            </form>
+            
           </div>
           <div class="row">
             <div class="col-6">
