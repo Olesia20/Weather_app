@@ -1,3 +1,25 @@
-h1 {
-  color: blueviolet;
+body {
+  font-family: "Rajdhani", sans-serif;
+  color: #32515c;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.weather-wrapper {
+  max-width: 600px;
+  margin: 40px auto;
+}
+.weather_app {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-image: url(../images/sky.jpg);
+  background-size: cover;
+  border: 1px solid r#d3b79cgb;
+
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 2px;
 }
