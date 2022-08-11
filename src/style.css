@@ -60,9 +60,13 @@ li {
 }
 .weather-temperature .active {
   color: #32515c;
-  text-decoration: none;
+
   cursor: default;
+  text-decoration: none;
 }
-.weather-temperature .tempFar {
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+.weather-temperature .tempF {
   text-decoration: none;
 }
