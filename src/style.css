@@ -69,3 +69,17 @@ li {
 .weather-temperature .tempF {
   text-decoration: none;
 }
+.weather-forecast {
+  margin-top: 50px;
+  text-align: center;
+}
+.weather-forecast-date {
+  font-size: 20px;
+  font-weight: 500;
+}
+.weather-forecast-temperature {
+  font-size: 20px;
+}
+.weather-forecast-weather-max {
+  font-weight: 600;
+}
