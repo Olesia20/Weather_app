@@ -60,7 +60,6 @@ li {
 }
 .weather-temperature .active {
   color: #32515c;
-
   cursor: default;
   text-decoration: none;
 }

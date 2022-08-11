@@ -61,12 +61,13 @@ function displayFuhrenheitTemperature(event) {
   event.preventDefault();
   let tempCelsius = document.querySelector("#temperature");
   tempC.classList.remove("active");
-
   let tempF = (celsiumTemperature * 9) / 5 + 32;
   tempCelsius.innerHTML = Math.round(tempF);
 }
 function displayCelsiusTemperature(event) {
   event.preventDefault();
+  tempC.classList.add("active");
+  tempF.classList.remove("active");
   let tempCelsius = document.querySelector("#temperature");
   tempCelsius.innerHTML = Math.round(celsiumTemperature);
 }
