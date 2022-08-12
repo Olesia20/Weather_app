@@ -21,32 +21,31 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
+function displauForecast() {
+  let forcastElement = document.querySelector("#forecast");
+  let days = ["Sat", "Sun", "Mon", "Thu", "Wed", "Thu"];
   let forecastHTML = `<div class="row">`;
-  let days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu"];
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       ` <div class="col-2">
-                <div class="weather-forecast-date">${day}</div>                
-                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Clear"width="70" />
-                <div class="weather-forecast-temperature">
-                <span class="weather-forecast-weather-max">18°</span>  
-                <span class="weather-forecast-weather-min">12°</span>   
-                </div>
-              </div> `;
+      <div class="weather-forecast-date">${day}</div>
+      <img
+        src="http://openweathermap.org/img/wn/10d@2x.png"
+        alt="Clear"
+        width="70"
+      />
+      <div class="weather-forecast-temperature">
+        <span class="weather-forecast-weather-max">18°</span>
+        <span class="weather-forecast-weather-min">12°</span>
+      </div>
+    </div>
+ `;
   });
 
   forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-}
-function getForcaste(coordiats) {
-  console.log(coordiats);
-  let apiKey = "32326959e29561c07003e2cd9a21f791";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecoll?lat=${coordiats.lat}&lon=${coordiats.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
-  axios.get(apiUrl).then(displayForecast);
+  forcastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
 }
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
@@ -72,6 +71,7 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
   getForcaste(response.data.coord);
 }
+
 function search(city) {
   let apiKey = "32326959e29561c07003e2cd9a21f791";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -101,6 +101,7 @@ function displayCelsiusTemperature(event) {
 }
 
 let celsiumTemperature = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
@@ -110,3 +111,4 @@ tempFuhrenheit.addEventListener("click", displayFuhrenheitTemperature);
 let tempC = document.querySelector("#celsium-link");
 tempC.addEventListener("click", displayCelsiusTemperature);
 search("kyiv");
+displauForecast();
