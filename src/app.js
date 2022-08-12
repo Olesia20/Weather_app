@@ -21,7 +21,8 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
-function displauForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forcastElement = document.querySelector("#forecast");
   let days = ["Sat", "Sun", "Mon", "Thu", "Wed", "Thu"];
   let forecastHTML = `<div class="row">`;
@@ -48,8 +49,9 @@ function displauForecast() {
 }
 function getForecast(coordinates) {
   let apiKey = "32326959e29561c07003e2cd9a21f791";
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
+  axios(apiUrl).then(displayForecast);
 }
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
@@ -114,4 +116,3 @@ tempFuhrenheit.addEventListener("click", displayFuhrenheitTemperature);
 let tempC = document.querySelector("#celsium-link");
 tempC.addEventListener("click", displayCelsiusTemperature);
 search("kyiv");
-displauForecast();
